@@ -12,11 +12,6 @@ pipeline {
                 sh 'docker build -t my-react-app:latest .' 
             }
         }
-        stage('Docker Push') {
-            steps {
-                sh 'docker push my-react-app:latest' 
-            }
-        }
          stage('Deploy to EC2') {
             steps {
                 // 1. Connect to the EC2 instance
